@@ -3,51 +3,35 @@ import "./BackgroundVideo.css"; // We'll add CSS here
 
 const BackgroundVideo = () => {
     return (
-        <div className="video-container">
-            {/* Background video */}
-            <video
-                autoPlay
-                loop
-                muted
-                className="background-video"
-            >
-                <source src="/videos/trucks-in-different-colors-rotating-on-alpha-loop.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+    
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="/videos/tanker-truck-on-the-road copy.mp4"type="video/mp4" />
             </video>
 
-            {/* Transparent black overlay  */}
-            <div className="overlay"></div>
+            <h1 class="top-heading">Fair Deal Truck Parts</h1>
 
-            {/* Content on top */}
-            {/* <div className="content">
-                <h1 className="text-5xl font-bold mb-4">Coming Soon</h1>
-                <p className="text-xl">
-                    Our heavy-duty truck spare parts website is under construction.
-                </p>
-            </div> */}
-            {/* Top main heading */}
-            <div className="center-image">
-                <img src="/assets/FAIRDEAL TRUCK PARTS (4) copy.png" alt="Logo" />
-            </div>
-            <div className="top-heading">
-                <h1>Coming Soon</h1>
+            <div class="center-image">
+                <img src="/assets/FAIRDEAL TRUCK PARTS (4) copy.png" alt="Company Logo" />
             </div>
 
-            {/* Center content */}
-            <div className="center-content">
-                <h2>Heavy Duty, Truck, Spare Parts and Accessories</h2>
-                <p>Our website is coming soon. Stay tuned.</p>
+            <div class="center-content">
+                <h2>Coming Soon</h2>
+                <p>Your trusted source for heavy-duty truck parts.</p>
             </div>
-            <div className="bottom-contact">
-                <p>Contact: +1 (289) 780-283-2830</p>
-                {/* <p>Email: info@fairdealtruckparts.ca</p> */}
+
+            <div class="bottom-contact">
+                <p>📞 +1(780)2832830</p>
+                {/* <p><a href="mailto:info@fairdealtruckparts.ca" style={{color:inherit, text-decoration:none}}>✉ info@fairdealtruckparts.ca</a></p> */}
                 <p>
-                    Email:
-                    <a href="mailto:info@fairdealtruckparts.ca" target="_blank" rel="noopener noreferrer">
-                        info@fairdealtruckparts.ca
+                    <a
+                        href="mailto:info@fairdealtruckparts.ca"
+                        style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                        ✉ fairdealtruckparts@gmail.com
                     </a>
                 </p>
-                <p>Alberta, Canada</p>
+                <p>📍 Edmonton, Alberta, Canada</p>
             </div>
         </div>
     );
