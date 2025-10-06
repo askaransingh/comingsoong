@@ -12,7 +12,7 @@ const BackgroundVideo = () => {
             <h1 class="top-heading">Fair Deal Truck Parts</h1>
 
             <div class="center-image">
-                <img src="/assets/FAIRDEAL TRUCK PARTS (4) copy.png" alt="Company Logo" />
+                <img src="/assets/FAIRDEAL TRUCK PARTS (33).png" alt="Company Logo" />
             </div>
 
             <div class="center-content">

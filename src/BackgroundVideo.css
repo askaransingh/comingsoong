@@ -44,8 +44,8 @@
 }
 
 .center-image img {
-  width: 500px;
-  max-width: 80%;
+  width: 300px;
+  max-width: 68%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -82,7 +82,7 @@
 /* ---------------- BOTTOM CONTACT ---------------- */
 .bottom-contact {
   position: absolute;
-  bottom: 35px;
+  bottom: 100px;
   width: 100%;
   text-align: center;
   color: #000000;
@@ -127,7 +127,7 @@
   }
 
   .center-content {
-    top: 63%;
+    top: 65%;
   }
 
   .center-content h2 {
