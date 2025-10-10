@@ -5,13 +5,19 @@ const BackgroundVideo = () => {
   return (
     <div className="video-container">
       <video
+        className="background-video"
         autoPlay
         muted
         loop
         playsInline
-        className="background-video"
+        preload="auto"
+        poster="/assets/video-fallback.jpg" // optional
       >
-        <source src="/videos/tanker-truck-on-the-road copy.mp4" type="video/mp4" />
+        <source
+          src="/videos/tanker-truck-on-the-road copy.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
       </video>
 
       <h1 className="top-heading">Fair Deal Truck Parts</h1>
@@ -20,6 +26,7 @@ const BackgroundVideo = () => {
         <img
           src="/assets/FAIRDEAL TRUCK PARTS (33).png"
           alt="Company Logo"
+          loading="lazy"
         />
       </div>
 
@@ -31,10 +38,7 @@ const BackgroundVideo = () => {
       <div className="bottom-contact">
         <p>📞 +1 (780) 283-2830</p>
         <p>
-          <a
-            href="mailto:fairdealtruckparts@gmail.com"
-            style={{ color: "inherit", textDecoration: "none" }}
-          >
+          <a href="mailto:fairdealtruckparts@gmail.com">
             ✉ fairdealtruckparts@gmail.com
           </a>
         </p>
