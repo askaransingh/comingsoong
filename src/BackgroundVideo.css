@@ -11,7 +11,7 @@
   width: 100%;
   height: 100dvh; /* dynamic viewport height for Safari fix */
   overflow: hidden;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 /* Background Video */
