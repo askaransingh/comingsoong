@@ -1,171 +1,127 @@
-/* ---------------- VIDEO CONTAINER ---------------- */
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Video Container */
 .video-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh; /* dynamic viewport height for Safari fix */
   overflow: hidden;
+  background-color: #ffffff;
 }
 
-/* ---------------- BACKGROUND VIDEO ---------------- */
+/* Background Video */
 .background-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.25;
-  transition: all 0.3s ease;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+  background: #000;
 }
 
-/* ---------------- TOP HEADING ---------------- */
+/* Safari Fix */
+@supports (-webkit-touch-callout: none) {
+  .background-video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Top Heading */
 .top-heading {
   position: absolute;
-  top:18%;
+  top: 15%;
   width: 100%;
   text-align: center;
   color: #d90429;
-  z-index: 2;
-  /* font-family: "Caveat Brush", cursive; */
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: 1px;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
-/* ---------------- CENTER LOGO/IMAGE ---------------- */
+/* Center Image */
 .center-image {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
   text-align: center;
+  z-index: 3;
 }
 
 .center-image img {
-  width: 300px;
-  max-width: 68%;
+  width: clamp(160px, 40vw, 320px);
   height: auto;
-  display: block;
-  margin: 0 auto;
+  user-select: none;
 }
 
-/* ---------------- CENTER CONTENT (TEXT UNDER LOGO) ---------------- */
+/* Center Content */
 .center-content {
   position: absolute;
-  top: 65%; /* reduced space to logo */
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
-  line-height: 1.1;
   color: #000000;
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 
 .center-content h2 {
-  font-size: 2.2rem;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
   font-weight: 600;
-  margin-bottom: 0.3rem; /* less gap */
-  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
 }
 
 .center-content p {
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   opacity: 0.9;
-  margin: 0 auto;
-  line-height: 1.2;
 }
 
-/* ---------------- BOTTOM CONTACT ---------------- */
+/* Bottom Contact */
 .bottom-contact {
   position: absolute;
-  bottom: 100px;
+  bottom: 6%;
   width: 100%;
   text-align: center;
   color: #000000;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.4;
   z-index: 2;
-  font-size: 1.1rem;
-  line-height: 1.3;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-.bottom-contact p {
-  margin: 2px 0;
+.bottom-contact .email-link {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* ---------------- RESPONSIVE DESIGN ---------------- */
-@media (max-width: 1024px) {
+.bottom-contact .email-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Tweaks */
+@media (orientation: landscape) and (max-height: 500px) {
   .top-heading {
-    font-size: 2.5rem;
-    top: 17%;
-  }
-
-  .center-image img {
-    width: 400px;
-  }
-
-  .center-content h2 {
+    top: 10%;
     font-size: 2rem;
   }
-
-  .center-content p {
-    font-size: 1.2rem;
+  .center-image {
+    top: 50%;
   }
-}
-
-@media (max-width: 768px) {
-  .top-heading {
-    font-size: 2.2rem;
-    top: 16%;
-  }
-
-  .center-image img {
-    width: 300px;
-  }
-
   .center-content {
-    top: 65%;
-  }
-
-  .center-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .center-content p {
-    font-size: 1.1rem;
-  }
-
-  .bottom-contact {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-heading {
-    font-size: 1.8rem;
-    top: 15%;
-  }
-
-  .center-image img {
-    width: 250px;
-  }
-
-  .center-content {
-    top: 60%;
-  }
-
-  .center-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .center-content p {
-    font-size: 1rem;
-  }
-
-  .bottom-contact {
-    font-size: 0.9rem;
+    top: 72%;
   }
 }
